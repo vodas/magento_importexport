@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <DB_Prodexport>
+            <active>true</active>
+            <codePool>local</codePool>
+        </DB_Prodexport>
+    </modules>
+</config>

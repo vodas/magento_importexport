@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config>
+<config>
+    <menu>
+        <datamarked>
+            <title>Datamarked</title>
+            <sort_order>999</sort_order>
+            <children>
+                <exportprods>
+                    <title>Export Products</title>
+                    <sort_order>90</sort_order>
+                    <action>adminhtml/exportprods/index</action>
+                </exportprods>
+                <importprods>
+                    <title>Import Products</title>
+                    <sort_order>91</sort_order>
+                    <action>adminhtml/importprods/index</action>
+                </importprods>
+            </children>
+        </datamarked>
+    </menu>
+
+
+
+
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <datamarked>
+                        <title>Datamarked</title>
+                        <sort_order>999</sort_order>
+                        <children>
+                            <exportprods>
+                                <title>Export products</title>
+                            </exportprods>
+                        </children>
+                    </datamarked>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+
+</config>

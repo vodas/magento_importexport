@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <DB_Prodexport>
+            <version>0.0.0.1</version>
+        </DB_Prodexport>
+    </modules>
+
+    <crontab>
+        <jobs>
+            <my_cron>
+                <schedule>
+                    <cron_expr>0 1 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>db_prodexport/cronimport::cronFunc</model>
+                </run>
+            </my_cron>
+        </jobs>
+    </crontab>
+
+    <global>
+        <models>
+            <db_prodexport>
+                <class>DB_Prodexport_Model</class>
+                <resourceModel>db_prodexport_resource</resourceModel>
+            </db_prodexport>
+        </models>
+
+        <resources>
+            <db_prodexport_setup>
+                <setup>
+                    <module>DB_Prodexport</module>
+                </setup>
+            </db_prodexport_setup>
+        </resources>
+
+        <blocks>
+            <db_prodexport>
+                <class>DB_Prodexport_Block</class>
+            </db_prodexport>
+        </blocks>
+
+        <helpers>
+            <db_prodexport>
+                <class>DB_Prodexport_Helper</class>
+            </db_prodexport>
+        </helpers>
+        <models>
+            <db_prodexport>
+                <class>DB_Prodexport_Model</class>
+            </db_prodexport>
+
+        </models>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <db_prodexport before="Mage_Adminhtml">DB_Prodexport</db_prodexport>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+
+
+
+</config>

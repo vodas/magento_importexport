@@ -1,0 +1,20 @@
+<h4><?php echo $this->__('Files in directory:');?></h4>
+<?php
+$filenames = $this->getFileslisting();
+foreach($filenames as $filename) {
+    if ($filename != 'processed') {
+        echo $filename . '<br>';
+    }
+}
+?>
+<br><h4><?php echo $this->__('Last imported file:');?></h4>
+<?php
+echo $this->getLastImportedFile();
+?>
+<br><br><h4><?php echo $this->__('Last import data:');?></h4>
+<?php
+    $filepath = Mage::getBaseDir().'/var/import/regular/processed/'.$this->getLastImportedFile();
+    if (file_exists($filepath)&&$this->getLastImportedFile()!=null) {
+        echo date ("F d Y H:i:s.", filemtime($filepath));
+    }
+ ?>
